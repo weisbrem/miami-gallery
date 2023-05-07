@@ -5,7 +5,7 @@ const sliderMain = new Swiper('.slider--main', {
   freeMode: true,
   centerSlides: true,
   parallax: true,
-  slidesOffsetBefore: 430,
+  slidesOffsetBefore: 550,
   breakpoints: {
     0: {
       slidesPerView: 2.5,
