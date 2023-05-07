@@ -1,4 +1,5 @@
 const sliderItems = document.querySelectorAll('.slider__item');
+const slides = Array.from(sliderItems);
 const desc = document.querySelector('.description');
 
 const sliderMain = new Swiper('.slider--main', {
@@ -29,7 +30,14 @@ sliderMain.controller.control = sliderBg;
 
 sliderItems.forEach((item) => {
   item.addEventListener('click', () => {
-    item.classList.toggle('slider__item--opened');
+    const openedSlide = slides.find((slide) => slide.classList.contains('slider__item--opened'));
+
+    if (openedSlide) {
+      openedSlide.classList.remove('slider__item--opened');
+      return;
+    }
+
+    item.classList.add('slider__item--opened');
   });
 });
 
